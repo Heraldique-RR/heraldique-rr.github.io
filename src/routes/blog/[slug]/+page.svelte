@@ -23,8 +23,21 @@
 	</header>
 
 	<div class="content">
-		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-		{@html post.content}
+		{#each post.blocks as block}
+			{#if block.type === 'heading' && block.level === 2}
+				<h2>{block.text}</h2>
+			{:else if block.type === 'heading' && block.level === 3}
+				<h3>{block.text}</h3>
+			{:else if block.type === 'paragraph'}
+				<p>{block.text}</p>
+			{:else if block.type === 'list'}
+				<ul>
+					{#each block.items ?? [] as item}
+						<li>{item}</li>
+					{/each}
+				</ul>
+			{/if}
+		{/each}
 	</div>
 </article>
 
