@@ -1,0 +1,36 @@
+title: Héraldique RR
+description: Un site dédié à l'héraldique et aux arts du blason
+baseurl: ""
+url: "https://heraldique-rr.github.io"
+
+author:
+  name: Héraldique RR
+
+# Build settings
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Navigation
+header_pages:
+  - about.md
+  - blog.md
+
+# Permalink style
+permalink: /:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github/
